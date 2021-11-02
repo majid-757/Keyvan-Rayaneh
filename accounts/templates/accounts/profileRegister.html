@@ -1,0 +1,33 @@
+{% extends 'register/base.html' %}
+
+{% block title %}
+    فرم ثبت نام کاربران 
+{% endblock title %}
+
+
+{% block maincontent %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <div class="mainborder">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mylable">نام : {{ formData.first_name }}</p>
+                    <p class="mylable">نام خانوادگی : {{ formData.last_name }}</p>
+                    <p class="mylable">جنسیت : {{ formData.gender }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mylable">ایمیل : {{ formData.email }}</p>
+                    <p class="mylable">نام کاربری : {{ formData.username }}</p>
+                    <p class="mylable">کلمه عبور : {{ formData.password }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="bottonborder">
+            <button type="submit" class="btn btn-success">ثبت نام</button>
+    </form>
+    
+{% endblock maincontent %}
+
+

@@ -1,0 +1,21 @@
+{% extends "register/base.html" %}
+
+{% block title %}
+    ویرایش اطلاعات مشتریان 
+{% endblock title %}
+
+{% block maincontent %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {{ customerForm }}
+        
+        <button type="submit" class="btn btn-success">ذخیره</button>
+
+    </form>
+         
+
+{% endblock maincontent %}
+
+

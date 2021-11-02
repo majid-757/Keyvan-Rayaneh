@@ -1,0 +1,46 @@
+{% extends "register/base.html" %}
+
+
+{% block title %}
+    ثبت اطلاعات
+{% endblock title %}
+
+{% block maincontent %}
+    <form action="" method="POST">
+        {% csrf_token %}
+    
+        <div class="mainborder">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+
+                        <p class="mylable"> نام : {{ customerForm.firstname }} </p>
+                        <p class="mylable">  نام خانوادگی : {{ customerForm.lastname }} </p>
+                        <p class="mylable">  موبایل : {{ customerForm.mobile }} </p>
+                        <p class="mylable">  تلفن ثابت : {{ customerForm.landline_phone }} </p>
+                        <p class="mylable">  رمز عبور دستگاه : {{ customerForm.device_password }} </p>
+                        <p class="mylable">  نام پذیرنده دستگاه : {{ customerForm.acceptor_name }} </p>
+                        <p class="mylable">  نام سرویس کار : {{ customerForm.name_of_services }} </p>
+
+                    </div>
+                    <div>
+                        
+                        <p class="mylable">  نام تستر نهایی : {{ customerForm.the_name_of_the_final_tester }} </p>
+                        <p class="mylable"> لوازم جانبی : {{ customerForm.accessories }} </p>
+                        <p class="mylable"> شماره فاکتور : {{ customerForm.invoice_number }} </p>
+                        <p class="mylable"> مبلغ دریافتی : {{ customerForm.received_money }} </p>
+                        <p class="mylable"> تاریخ : {{ customerForm.startdatetime }} </p>
+                        <p class="mylable"> وضعیت تماس : {{ customerForm.call_status }} </p>
+                        <p class="mylable"> عملیات انجام شده بر روی دستگاه : {{ customerForm.operations_performed_on_the_device }} </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+        <button type="submit" class="btn btn-success">ثبت نام</button>
+
+    </form>
+
+{% endblock maincontent %}
+

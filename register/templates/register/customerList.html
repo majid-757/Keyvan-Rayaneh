@@ -1,0 +1,31 @@
+{% extends "register/base.html" %}
+
+{% block title %}
+    جستجوی اطلاعات مشتریان 
+{% endblock title %}
+
+{% block maincontent %}
+
+    {% if customerList %}
+    <form action="" method="GET">
+
+        {{ searchForm }}
+        <button type="submit" class="btn btn-success">جستجو</button>
+
+    </form>
+        {% for customer in customerList %}
+            <div class="col-md-2">
+                <a href="/customerDetails/{{ customer.id }}">
+                
+                    <div>
+                        {{ customer }} 
+                    </div>
+                
+                </a>
+            </div>
+        {% endfor %}
+    {% endif %} 
+
+{% endblock maincontent %}
+
+

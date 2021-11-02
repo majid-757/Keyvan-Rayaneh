@@ -1,0 +1,67 @@
+{% load jalali_tags %}
+
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl">
+    <head>
+        <title>سامانه ثبت خدمات شرکت کیوان رایانه آذرشهر</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'register/css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'register/css/fontawesome.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'register/css/style.css' %}">
+
+
+        <style>
+            @font-face{
+                font-family: 'IranSanse';
+                src: local('IranSanse'),
+                url('{% static "register/fonts/eot/IRANSansWeb.eot" %}') format('eot'),
+                url('{% static "register/fonts/ttf/IRANSansWeb.ttf" %}') format('ttf'),
+                url('{% static "register/fonts/woff/IRANSansWeb.woff" %}') format('woff'),
+                url('{% static "register/fonts/woff2/IRANSansWeb.woff2" %}') format('woff2');
+            }
+        </style>>
+
+
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row box">
+                <h1>{% block title %}{% endblock title %}</h1>
+                <ul class="btnul">
+
+                    {% if user.is_authenticated %}
+                        <li><a class="btn btn-info" href="/accounts/profile">پروفایل</a></li>
+                        <li><a class="btn btn-danger" href="/accounts/logout">خروج</a></li>
+
+                    {% else %}
+                        <li><a class="btn btn-success" href="/accounts/login">ورود</a></li>
+                        <li><a class="btn btn-danger" href="/accounts/profileRegister">ثبت نام</a></li>
+                    {% endif %}
+
+
+                    <li><a class="btn btn-warning" href="/customerList">جستجوی مشتریان</a></li>
+                    <li><a class="btn btn-light" href="/">صفحه اصلی</a></li>
+
+                </ul>
+            </div>
+
+            <div class="row">
+                {% block maincontent %}
+                {% endblock maincontent %}
+            </div>
+        </div>
+
+    </body>
+    <script src="{% static 'register/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'register/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'register/js/fontawesome.min.js' %}"></script>
+    <script src="{% static 'register/js/main.js' %}"></script>
+
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+
+    <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
+	<script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
+</html>
+

@@ -1,0 +1,26 @@
+{% extends 'register/base.html' %}
+
+{% block title %}
+    پروفایل 
+{% endblock title %}
+
+
+{% block maincontent %}
+
+    <div class="row" style="margin-top: 20px;">
+
+        <div class="col-md-8">
+
+            <div>
+                <p class="border"> <span class="title">نام و نام خانوادگی : </span> {{ profile.user.get_full_name }}</p>
+                <p class="border"> <span class="title">جنسیت : </span> {{ profile.get_gender_display }}</p>
+                <ul class="btnul">
+                    <li><a class="btn btn-primary" href="/accounts/profileEdit/">ویرایش پروفایل</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+{% endblock maincontent %}
+
+

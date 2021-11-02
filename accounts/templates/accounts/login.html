@@ -1,0 +1,29 @@
+{% extends 'register/base.html' %}
+
+{% block title %}
+    ورود کاربران
+{% endblock title %}
+
+
+{% block maincontent %}
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form action="" method="POST" class="form">
+            {% csrf_token %}
+            <h3>اطلاعات کاربری خود را وارد نمائید</h3>
+            <p style="color: red;">{{ username }} : {{ errorMessage }}</p>
+            <label class="label-control">نام کاربری :</label>
+            <input type="text" id="username" name="username" placeholder="نام کاربری خود را وارد نمائید" class="form-control">
+            <label class="label-control">رمز عبور</label>
+            <input type="password" id="password" name="password" placeholder="رمز عبور خود را وارد نمائید" class="form-control">
+
+            <input type="submit" value="ورود" class="btn btn-success">
+        </form>
+    </div>
+
+    <div class="col-md-3"></div>
+
+{% endblock maincontent %}
+
+

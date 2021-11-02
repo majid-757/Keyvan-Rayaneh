@@ -1,0 +1,32 @@
+{% extends "register/base.html" %}
+
+{% block title %}
+    جزئیات و ویرایش اطلاعات {{ customerDetails }}
+{% endblock title %}
+
+{% block maincontent %}
+
+    <div class="col-md-10">
+
+            <h3>نام : {{ customerDetails.firstname }}</h3>
+            <br>
+            <h3>نام خانوادگی : {{ customerDetails.lastname }}</h3>
+            <br>
+            <h3>وضعیت تماس : {{ customerDetails.get_call_status_display }}</h3>
+            <br>
+            <h3>نام پذیرنده : {{ customerDetails.acceptor_name }}</h3>
+            <br>
+            <h3>نام سرویس کار : {{ customerDetails.name_of_services }}</h3>
+            <br>
+            <h3>تاریخ : {{ customerDetails.get_jalali_date }}</h3>
+            <br>
+            <h3>  عملیات انجام شده بر روی دستگاه : {{ customerDetails.operations_performed_on_the_device }}</h3>
+
+            <div>
+                <a href="/customerEdit/{{ customerDetails.id }}" class="btn btn-success">ویرایش</a>
+            </div>
+    </div>
+    
+{% endblock maincontent %}
+
+
